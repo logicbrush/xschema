@@ -1,0 +1,30 @@
+type `Member` {
+
+  has field `ID`
+    of type `Integer`,
+    is identifying
+    auto;
+
+  has field `Email`
+    of type `Text` limit 100,
+    is required,
+    is unique;
+
+  has field `FirstName`
+    of type `Text` limit 50,
+    is required;
+
+  has field `LastName`
+    of type `Text` limit 50,
+    is required;
+
+  has field `Password`
+    of type `Text`
+    is protected
+    is hashed;
+
+  has field `ConfirmPassword`
+    of type `Text`
+    is transient;
+
+}
